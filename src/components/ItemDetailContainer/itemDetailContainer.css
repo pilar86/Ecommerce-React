@@ -1,0 +1,12 @@
+.CardDetail{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:1rem;
+}
+
+.selected-product{
+    display: flex;            
+    justify-content: center; 
+    padding: 25px 1px;       
+}

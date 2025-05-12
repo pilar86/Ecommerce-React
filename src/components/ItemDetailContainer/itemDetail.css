@@ -1,0 +1,142 @@
+
+.product-card {
+    display: flex;
+    flex-direction: row;
+    max-width: 800px;  /* Un ancho máximo (ajusta el valor) */
+    width: 95%;        /* Ocupa el 90% del contenedor, hasta el máximo */
+    margin: 0; 
+    padding: 20px; 
+    background-color: #d4d2c7bb;
+    border-radius: 10px; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.144);
+    gap: 42px;
+    box-sizing: border-box;
+    align-items: center;
+  }
+
+  .product-img {
+    flex: 1 1 40%; /* Permitir crecer/encoger, base ~40% */
+    min-width: 200px; /* Ancho mínimo antes de encoger mucho */
+    display: flex; /* Para centrar la imagen dentro si es necesario */
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .product-img img {
+    max-width: 100%;
+    max-height: 450px;
+    border-radius: 12px;
+    object-fit: contain;
+    border: 1.5px solid #eee;
+  }
+  
+  .product-info {
+  flex: 1 1 55%; 
+  flex-direction: column;
+  gap: 0.5rem; 
+  padding: 0; 
+  min-width: 250px;
+  }
+
+  .product-info h4 {
+    margin: 0;
+    padding-top: 8px;
+    padding-left: 8px;
+    font-family: "Numans", sans-serif;
+    font-weight: 500;
+    font-size: 24px; 
+    text-align: left;
+    color: #052402;
+  }
+
+  .product-info p {
+  font-family: "Numans", sans-serif;
+  font-weight: 400;
+  margin: 0;
+  padding-left: 8px;
+  font-size: 18px;
+  color: #444;
+  line-height: 1.6;
+  }
+
+  p.price {
+  font-size: 22px;
+  font-weight: bold;
+  color: #1e201e;
+  margin-bottom: 0.5rem;
+  }
+  
+  .product-actions {
+  margin-top: auto; 
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column; /* Apila los botones */
+  gap: 0.75rem;
+  width: 100%;
+  }
+
+  .btn-primary{
+    font-family: "Numans", sans-serif;
+    padding: 16px 24px;
+    border-radius: 6px;
+    background-color: rgb(8, 61, 12);;
+
+    font-size: 18px;
+    font-weight:  300px;
+    letter-spacing: 1px;
+    color:#f6f2ee;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  .btn-secondary{
+    font-family: "Numans", sans-serif;
+    padding: 16px 24px;
+    border-radius: 6px;
+    border-color: #193a1f;
+    background-color: #f6f2ee;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #193a1f;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  .btn-primary:hover,
+  .btn-card-primary:hover,
+  .btn-count:hover,
+  .btn-secondary:hover {
+    background-color: #3e7a06;
+    color: #f6f2ee;
+  }
+
+  @media (max-width: 600px) { 
+    .product-card {
+      flex-direction: column; 
+      align-items: center;    
+      width: 85%;             
+      padding: 15px;
+      gap: 15px;
+    }
+
+    .product-info {
+      flex-basis: auto; 
+      width: 100%;    
+      min-width: unset; 
+      text-align: center;
+    }
+  
+    .product-info {
+      gap: 0.8rem;
+    }
+  
+    .product-info h4 {
+      font-size: 1.6rem;
+    }
+     .product-info p {
+      font-size: 0.95rem;
+      text-align: left;
+    }
+     p.price {
+      font-size: 1.4rem;
+    }
+  }

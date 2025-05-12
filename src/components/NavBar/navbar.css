@@ -1,0 +1,160 @@
+.navbar {
+    padding-top: 1rem;
+    padding-bottom: 0; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-image: url("/public/assets/productos/img/backg3.jpg"); 
+    background-repeat: repeat-x;
+    background-position: center; 
+    background-size: cover; 
+    width: 100%; 
+    box-sizing: border-box;
+  }
+  
+  .titulos {
+    margin-top: 0;
+    margin-bottom: 1rem; 
+    width: 60%;
+    max-width: 800px; 
+    background-color: rgba(7, 15, 1, 0.65); 
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.3); 
+    box-shadow: 0px 0px 28px rgba(252, 251, 251, 0.507);
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    box-sizing: border-box;
+  }
+  
+  h1 {
+    font-family: 'Cinzel Decorative', cursive;
+    color: rgb(253, 252, 251);
+    font-size: 50px;
+    font-weight: normal; 
+    margin: 0.5rem 0;   
+    letter-spacing: 10px; 
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); 
+  }
+  
+  h2 {
+    font-family: 'Cinzel Decorative', cursive;
+    color: rgb(251, 238, 228);
+    font-size: 1.5rem; 
+    font-weight: normal;
+    margin: 0;         
+    margin-bottom: 0.5rem;
+    letter-spacing: 6px;  
+  }
+
+  .navigation-area {
+    display: flex;   
+    align-items: center;   
+    justify-content: center;  
+    flex-wrap: wrap;          
+    gap: 1rem;                
+    width: 100%;               
+    padding: 0.5rem 0;         
+  }
+  
+  .sectionsNav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sectionsNav ul li {
+    display: inline-block; 
+    margin: 0 0.5rem; 
+    margin-bottom: 5px; 
+  }
+  
+  .sectionsNav ul li a {
+    font-family: 'Cinzel Decorative', cursive;
+    text-decoration: underline;
+    text-underline-offset: 8px;
+    text-decoration-thickness: 1px;
+    padding: 0.3rem 1rem; 
+    color: rgb(251, 238, 228);
+    font-size: 20px;  
+    letter-spacing: 4px; 
+    display: inline-block; 
+    transition: color 0.2s ease; 
+  }
+  
+  .sectionsNav ul li a:hover {
+   color: #adec94;
+   font-weight: bolder;
+  }
+  
+
+  @media (max-width: 500px) {
+    .navbar {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+    .titulos {
+      width: 90%; 
+      margin-bottom: 0.5rem;
+      padding: 0.3rem 0.5rem;
+    }
+
+    .navigation-area {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+  
+    h1 {
+      font-size: 30px; 
+      letter-spacing: 5px;
+      margin: 0.3rem 0;
+    }
+  
+    h2 {
+      font-size: 19px; 
+      letter-spacing: 3px;
+      margin-bottom: 0.3rem;
+    }
+  
+    .sectionsNav ul li {
+       margin: 0 0.2rem; 
+       margin-bottom: 3px;
+    }
+  
+    .sectionsNav ul li a {
+      font-size: 0.9rem; 
+      letter-spacing: 1px;
+      padding: 0.2rem 0.5rem;
+    }
+  
+    .svg-inline--fa, svg:not(:host).svg-inline--fa {
+       font-size: 1.5rem; 
+       vertical-align: middle; 
+    }
+  }
+  
+  @media (min-width: 501px) and (max-width: 800px) {
+    .titulos {
+      width: 75%;
+      margin-bottom: 0.8rem;
+    }
+
+    .navigation-area {
+        gap: 0.8rem; 
+      }
+  
+    h1 {
+      font-size: 40px;
+      letter-spacing: 8px;
+    }
+  
+    h2 {
+      font-size: 25px; 
+      letter-spacing: 5px;
+    }
+  
+    .sectionsNav ul li a {
+      font-size: 1rem; 
+      letter-spacing: 2px;
+      padding: 0.3rem 0.8rem;
+    }
+  }

@@ -1,0 +1,28 @@
+.svg-inline--fa{
+height: 26px;
+width: 26px;
+margin: 0;
+padding: 8px; 
+border-radius: 4px;
+color: rgba(239, 234, 227, 0.948);
+background-color: rgba(27, 26, 26, 0.365);
+box-shadow: 0px 0px 10px rgba(242, 240, 239, 0.3);
+}
+
+.cartQ {
+    font-size: 22px;
+    margin-left: 4px;
+    color: white;
+  }
+
+  @media (max-width: 500px) {
+
+    .svg-inline--fa{
+      height: 18px;
+      width: 18px;
+    }
+
+    .cartQ {
+    font-size: 16px;
+    }
+  }

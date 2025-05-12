@@ -1,0 +1,16 @@
+.cards-container {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;    
+    margin: 0;
+}  
+.card{
+    background-color:  #f6f2ee;
+    width: 280px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 30px rgba(134, 128, 123, 0.445); 
+    overflow: hidden;
+    transition:  all 0.3s ease-in;
+    cursor: pointer;
+    margin: 0px;
+}
