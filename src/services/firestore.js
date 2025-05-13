@@ -290,8 +290,6 @@ export async function dataToFirestore(){
 
   const coleccion = collection(firestore, "cosmética natural");
 
- 
-
   for (let item of data){
     
       const newDoc = await addDoc(coleccion, item)

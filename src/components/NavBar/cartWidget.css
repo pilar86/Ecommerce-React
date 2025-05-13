@@ -1,6 +1,6 @@
 .svg-inline--fa{
-height: 26px;
-width: 26px;
+height: 28px;
+width: 28px;
 margin: 0;
 padding: 8px; 
 border-radius: 4px;
@@ -10,7 +10,7 @@ box-shadow: 0px 0px 10px rgba(242, 240, 239, 0.3);
 }
 
 .cartQ {
-    font-size: 22px;
+    font-size: 20px;
     margin-left: 4px;
     color: white;
   }

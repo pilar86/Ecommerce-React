@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import "./Checkout.css";
 
 export default function Checkout() {
   const { orderid } = useParams(); 

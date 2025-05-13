@@ -3,7 +3,6 @@ import { cartContext } from "../../context/cartContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { Link } from 'react-router-dom';
-
 import "./cartView.css";
 import CheckoutForm from "../CheckoutForm/CheckoutForm";
 import Checkout from "../Checkout/Checkout";
@@ -30,15 +29,15 @@ export default function CartView() {
     <section className="mi-carrito">
       <h2>Mi Carrito</h2>
 
-      {/* Si hay una orden completada, mostramos el componente Checkout con el ID */}
+  
       {orderId ? (
         <Checkout orderId={orderId} />
       ) : cart.length === 0 ? (
-        // Si el carrito está vacío, mostramos este mensaje
+        
         <h4>Tu carrito está vacío</h4>
       ) : (
         <>
-          {/* Lista de productos del carrito */}
+          
           <ul className="cart-list">
             {cart.map((item) => (
               <li key={item.id} className="cart-item">
@@ -48,7 +47,7 @@ export default function CartView() {
                   <p>Precio: ${item.price}</p>
                   <p>Cantidad: {item.quantity}</p> 
                 </div>
-                {/* Botón para eliminar item del carrito */}
+                
                 <button className="small-btn" onClick={() => deleteItem(item.id)}>
                   <FontAwesomeIcon icon={faTrashCan} />
                 </button>
@@ -56,12 +55,12 @@ export default function CartView() {
             ))}
           </ul>
 
-          {/* Muestra el total */}
+          
           <div className="cart-summary">
             <h4>Total: ${getTotalPrice()}</h4>
           </div>
 
-          {/* Si no se está mostrando el formulario, mostramos los botones de acción */}
+          
           {!showForm ? (
             <div className="buttons-wrapper">
               <button className="btn-primary" onClick={handleFinish}>

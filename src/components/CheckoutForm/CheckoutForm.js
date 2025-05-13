@@ -1,10 +1,12 @@
 import { useContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { cartContext } from "../../context/cartContext";
-import { buyOrder } from "../../services/firestore"; // Asegurate que esta función esté bien definida
+import { buyOrder } from "../../services/firestore";
 import "./checkoutForm.css";
 
 export default function CheckoutForm({ onOrderComplete }) {
-  const { cart, getTotalPrice } = useContext(cartContext);
+  const { cart, getTotalPrice, emptyCart } = useContext(cartContext);
+  const navigate = useNavigate(); 
 
   const [dataForm, setDataForm] = useState({
     name: "",
@@ -12,24 +14,51 @@ export default function CheckoutForm({ onOrderComplete }) {
     email: ""
   });
 
-  // ✅ Maneja el envío del formulario
-  function handleCheckout(event) {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState(null);
+
+  async function handleCheckout(event) {
     event.preventDefault();
+
+    if (!dataForm.name || !dataForm.phone || !dataForm.email) {
+      setSubmitError("Por favor, completa todos los campos.");
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitError(null);
 
     const orderData = {
       buyer: dataForm,
-      items: cart,
+      items: cart.map(item => ({
+          id: item.id,
+          title: item.title,
+          price: item.price,
+          quantity: item.quantity 
+      })),
       date: new Date(),
       total: getTotalPrice(),
     };
 
-    // ✅ Creamos la orden en Firebase y notificamos al componente padre con el ID
-    buyOrder(orderData).then((orderId) => {
-      onOrderComplete(orderId);
-    });
+    try {
+      const orderId = await buyOrder(orderData);
+
+      if (orderId) {
+        if (onOrderComplete) { 
+          onOrderComplete(orderId);
+        }
+        emptyCart(); 
+        navigate(`/checkout/${orderId}`); 
+      } else {
+        throw new Error("No se recibió un ID de orden de Firebase.");
+      }
+    } catch (error) {
+      setSubmitError("Hubo un problema al crear tu orden. Intenta de nuevo más tarde.");
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
- 
   function inputChangeHandler(event) {
     const { name, value } = event.target;
     setDataForm((prevForm) => ({
@@ -50,21 +79,21 @@ export default function CheckoutForm({ onOrderComplete }) {
             type="text"
             placeholder="Ingrese su Nombre"
             required
+            disabled={isSubmitting}
           />
         </div>
-
         <div className="form-item">
           <label htmlFor="phone">Teléfono</label>
           <input
             value={dataForm.phone}
             onChange={inputChangeHandler}
             name="phone"
-            type="text"
+            type="tel"
             placeholder="Ingrese su Teléfono"
             required
+            disabled={isSubmitting}
           />
         </div>
-
         <div className="form-item">
           <label htmlFor="email">Email</label>
           <input
@@ -74,102 +103,26 @@ export default function CheckoutForm({ onOrderComplete }) {
             type="email"
             placeholder="Ingrese su Email"
             required
+            disabled={isSubmitting}
           />
         </div>
 
-        {(!dataForm.name || !dataForm.phone || !dataForm.email) && (
+        {submitError && (
+          <p className="error-text" style={{ color: "red", marginTop: "10px" }}>
+            {submitError}
+          </p>
+        )}
+        {(!dataForm.name || !dataForm.phone || !dataForm.email) && !submitError && (
           <p className="warning-text">* Por favor, completá todos los campos para finalizar la compra.</p>
         )}
-
         <button
-          className="btn-secondary"
-          disabled={!dataForm.name || !dataForm.phone || !dataForm.email}
+          className="btn-primary" 
+          disabled={isSubmitting || !dataForm.name || !dataForm.phone || !dataForm.email}
           type="submit"
         >
-          Finalizar Compra
+          {isSubmitting ? "Procesando..." : "Finalizar Compra"}
         </button>
       </form>
     </div>
   );
 }
-
-
-/*
-import React, { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
-import { cartContext } from "../../context/cartContext";
-import { buyOrder } from "../../services/firestore";
-import "./checkoutForm.css";
-
-function CheckoutForm({ onOrderComplete }) {
-  const [dataForm, setDataForm] = useState({ name: "", phone: "", email: "" });
-  const navigate = useNavigate();
-  const { cart, getTotalPrice } = useContext(cartContext);
-
-  function handleCheckout(event) {
-    event.preventDefault();
-
-    const orderData = {
-      buyer: dataForm,
-      items: cart,
-      date: new Date(),
-      total: getTotalPrice(),
-    };
-
-    buyOrder(orderData).then((orderid) => {
-      onOrderComplete(orderid); 
-      navigate(`/checkout/${orderid}`);
-    });
-  }
-
-  function inputChangeHandler(event) {
-    const { name, value } = event.target;
-    setDataForm({ ...dataForm, [name]: value });
-  }
-
-  return (
-    
-      <form onSubmit={handleCheckout}>
-        <div className="form-item">
-          <label>Nombre</label>
-          <input
-            name="name"
-            type="text"
-            value={dataForm.name}
-            onChange={inputChangeHandler}
-            required
-          />
-        </div>
-
-        <div className="form-item">
-          <label>Teléfono</label>
-          <input
-            name="phone"
-            type="text"
-            value={dataForm.phone}
-            onChange={inputChangeHandler}
-            required
-          />
-        </div>
-
-        <div className="form-item">
-          <label>Email</label>
-          <input
-            name="email"
-            type="email"
-            value={dataForm.email}
-            onChange={inputChangeHandler}
-            required
-          />
-        </div>
-
-        <button className="btn-tertiary" type="submit">
-          Confirmar compra
-        </button>
-      </form>
-    
-  );
-}
-
-export default CheckoutForm;
-*/

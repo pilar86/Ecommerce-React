@@ -1,0 +1,44 @@
+.fin-compra h3{
+    margin: 2rem;
+    padding: 16px;
+    font-family:'Cinzel Decorative', cursive;
+    color: #214d29;
+    font-size: 36px;
+    font-weight: lighter;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.fin-compra h4{
+    margin: 2.8rem;
+    font-family: "Numans", sans-serif;
+    color: rgb(29, 29, 29);
+    font-size: 28px;
+    font-weight: lighter;
+    text-align: center;
+}
+
+.fin-compra h4 strong{
+    font-size:30px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+@media (max-width:500px){
+
+    .fin-compra h3{
+        font-size: 30px;
+        letter-spacing: 2px;
+    }
+
+    .fin-compra h4{
+        margin: 1.8rem;
+        font-size: 20px;
+    }
+
+    .fin-compra h4 strong{
+    font-size:22px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+}

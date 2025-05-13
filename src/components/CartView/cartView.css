@@ -9,7 +9,7 @@
 
 .cart-item {
     display: flex;
-    width: 55%;
+    width: 60%;
     align-items: center;
     gap: 12px;
     margin-bottom: 16px;
@@ -34,7 +34,7 @@
     border: none;
     outline: none;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 20px;
     padding: 6px;
     margin-left: auto;
     display: flex;
@@ -50,7 +50,7 @@
 }
 
 .fa-trash-can{
-    margin: 0;
+    
     background-color:#193a1f;
     color:rgb(219, 233, 218);
 }
@@ -59,10 +59,7 @@
     background-color: #3e7a06;
     color: #f6f2ee;
   }
-.total-carrito h4{
-    font-size:18px;
-    margin: 5px;
-}
+
 
 .btn-tertiary { 
     font-family: "Numans", sans-serif;
@@ -79,35 +76,29 @@
     transition: 0.3s ease;
 }
 
-h3{
-    font-family:'Cinzel Decorative', cursive;
-    font-size: 28px;
-    text-align: center;
-    letter-spacing: 4px;
-    margin: 1.5rem;
-    padding: 10px;
-}
-
 .cart-item-details h3{
     font-family: "Numans", sans-serif;
     font-weight: 600;
     text-align: left;
     margin: 10px;
-    font-size: 26px;
+    font-size: 24px;
     letter-spacing: 1px;
 }
-
-h4 {
+.cart-summary h4 {
+    padding: 8px;
+    margin: 4px;
     font-family: "Numans", sans-serif;
-    font-size: 24px;
+    font-weight: 600;
+    font-size: 26px;
     text-align: center;
+    
 }
 
 .cart-item-details p{
     font-family: "Numans", sans-serif;
-    font-size: 24px;
+    font-size: 22px;
     color: #242c26;
-    margin-left: 1.5rem;
+    margin-left: 1rem;
 }
 
 
@@ -155,7 +146,7 @@ h4 {
     }
 
     h4 {
-        font-size: 20px;
+        font-size: 25px;
         padding: 8px;
         margin: 4px;
     }
@@ -190,7 +181,7 @@ h4 {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 12px;
+        gap: 18px;
     }
     
     .buttons-wrapper button {
@@ -215,7 +206,7 @@ h4 {
     }
 
     .cart-item h3{
-        margin: 0;
+        margin-left: 1rem;
         font-size: 24px;
         letter-spacing: 0;
         color: #242c26;
@@ -224,6 +215,6 @@ h4 {
     .cart-item-details p{
         font-size: 19px;
         color: #242c26;
-        margin-left: 1.5rem;
+        margin-left: 1rem;
     }
 }

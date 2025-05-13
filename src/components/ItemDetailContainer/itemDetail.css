@@ -1,9 +1,8 @@
-
 .product-card {
     display: flex;
     flex-direction: row;
-    max-width: 800px;  /* Un ancho máximo (ajusta el valor) */
-    width: 95%;        /* Ocupa el 90% del contenedor, hasta el máximo */
+    max-width: 800px; 
+    width: 95%;        
     margin: 0; 
     padding: 20px; 
     background-color: #d4d2c7bb;
@@ -15,9 +14,9 @@
   }
 
   .product-img {
-    flex: 1 1 40%; /* Permitir crecer/encoger, base ~40% */
-    min-width: 200px; /* Ancho mínimo antes de encoger mucho */
-    display: flex; /* Para centrar la imagen dentro si es necesario */
+    flex: 1 1 40%; 
+    min-width: 200px; 
+    display: flex; 
     align-items: center;
     justify-content: center;
   }
@@ -70,18 +69,17 @@
   margin-top: auto; 
   padding-top: 10px;
   display: flex;
-  flex-direction: column; /* Apila los botones */
+  flex-direction: column; 
   gap: 0.75rem;
   width: 100%;
   }
 
   .btn-primary{
     font-family: "Numans", sans-serif;
-    padding: 16px 24px;
+    padding: 16px 28px;
     border-radius: 6px;
-    background-color: rgb(8, 61, 12);;
-
-    font-size: 18px;
+    background-color: rgb(8, 61, 12);
+    font-size: 16px;
     font-weight:  300px;
     letter-spacing: 1px;
     color:#f6f2ee;
@@ -90,11 +88,11 @@
   }
   .btn-secondary{
     font-family: "Numans", sans-serif;
-    padding: 16px 24px;
+    padding: 16px 22px;
     border-radius: 6px;
     border-color: #193a1f;
     background-color: #f6f2ee;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     letter-spacing: 1px;
     color: #193a1f;
@@ -110,6 +108,7 @@
   }
 
   @media (max-width: 600px) { 
+    
     .product-card {
       flex-direction: column; 
       align-items: center;    
@@ -118,9 +117,17 @@
       gap: 15px;
     }
 
+    .product-img,
+    .product-info {
+    flex-basis: auto;
+    width: 80%;
+    min-width: unset;
+    text-align: center;
+    }
+
     .product-info {
       flex-basis: auto; 
-      width: 100%;    
+      width: 90%;    
       min-width: unset; 
       text-align: center;
     }
@@ -130,13 +137,14 @@
     }
   
     .product-info h4 {
-      font-size: 1.6rem;
+      font-size: 22px;
     }
      .product-info p {
-      font-size: 0.95rem;
+      font-size: 16px;
       text-align: left;
     }
      p.price {
-      font-size: 1.4rem;
+      font-size: 16px;
     }
+      
   }
