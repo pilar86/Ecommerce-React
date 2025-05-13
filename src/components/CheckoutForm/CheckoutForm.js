@@ -116,7 +116,7 @@ export default function CheckoutForm({ onOrderComplete }) {
           <p className="warning-text">* Por favor, completá todos los campos para finalizar la compra.</p>
         )}
         <button
-          className="btn-primary" 
+          className="btn-tertiary" 
           disabled={isSubmitting || !dataForm.name || !dataForm.phone || !dataForm.email}
           type="submit"
         >

@@ -44,9 +44,17 @@
 
 .mi-carrito h2{
     color:rgb(7, 33, 3);
-    padding:1rem;
+    padding:2rem;
     font-size: 28px;
     letter-spacing: 4px;
+}
+
+.mi-carrito h4{
+    font-family: "Numans", sans-serif;
+    font-size: 22px;
+    color: #242c26;
+    margin-left: 1rem;
+    text-align: center;
 }
 
 .fa-trash-can{
@@ -91,7 +99,6 @@
     font-weight: 600;
     font-size: 26px;
     text-align: center;
-    
 }
 
 .cart-item-details p{
@@ -123,6 +130,11 @@
         padding:16px;
         font-size: 20px;
         letter-spacing:1px;
+    }
+
+    .mi-carrito h4{
+        font-size: 18px;
+        margin: 0;
     }
 
     h3{
