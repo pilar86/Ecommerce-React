@@ -3,11 +3,11 @@
 
 ## Introducción:
 
-
 Este es el Proyecto Final del curso React Js de Coderhouse.
 
 Se trata de un ecommerce de productos de cosmética natural realizado con componentes Javascript y Firebase como servidor en la nube. Además buscar lograr la mejor Experiencia de Usuario.
 
+![Preview del proyecto](public/assets/Readme.png)
 
 ## Componentes Js. 
 #### En la página podras:
@@ -47,7 +47,7 @@ $ npm  install
 $npm start
 
 
-## Podes ver la pagina  haciendo click [aquí](https://e-commerce-pg.vercel.app/)
+## Podes ver la pagina  haciendo click [aquí](https://ecommerce-react-js-pi.vercel.app/home)
 
 ## Gracias! :sparkling_heart:
 
