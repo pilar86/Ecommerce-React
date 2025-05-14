@@ -6,8 +6,13 @@ function Footer () {
     return (
         <div className="footer">
             <div className="title-redes">
+                
                 <h5>Seguinos en Redes y Contactanos</h5>
-                <h5><FaInstagram/> <FaFacebookSquare/> <FaYoutube/> <FaRegEnvelope/> <FaWhatsapp/></h5>
+
+                <div className="social-icons-container"> 
+                 <h5><FaInstagram/> <FaFacebookSquare/> <FaYoutube/> <FaRegEnvelope/> <FaWhatsapp/></h5>
+                </div>
+
             </div>
             
             <div className="copy-right">    

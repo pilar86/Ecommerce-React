@@ -11,8 +11,8 @@
     margin-top:2rem;
     margin-bottom:1rem;
     width: 700px;
-    background-color: rgba(1, 15, 3, 0.63);
-    box-shadow: 0px 0px 20px rgba(242, 240, 239, 0.822);
+    background-color: rgba(1, 15, 3, 0.582);
+    box-shadow: 0px 0px 20px rgba(242, 240, 239, 0.76);
     border-radius: 10px;
 }
 
@@ -25,6 +25,16 @@
     font-size:20px;
     font-weight:lighter;
     letter-spacing: 2px;
+}
+
+.social-icons-container h5 {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  gap: 1.5rem; 
+  margin: 10px;
+  color: rgb(251, 238, 228); 
+  font-size: 24px;/* Espacio entre el título y los iconos */
 }
 
 .copy-right h6{
@@ -42,11 +52,12 @@
 
 @media (max-width:500px){
     .title-redes{
-        width: 80%;
+        width: 90%;
     }
     .title-redes h5{
-        font-size: 14px;
+        font-size: 16px;
         padding: 5px;
-        margin: 8px;
+        margin: 10px;
+        gap: 2rem;
     }
 }
