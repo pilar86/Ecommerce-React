@@ -21,14 +21,15 @@ function NavBar () {
           <li><Link to="/category/hair">Hair</Link></li>
           <li><Link to="/category/body">Body</Link></li>
         </ul>
+      </div>  
         
-        <ul>
-            <li><Link to="/cartView"><CartWidget/></Link></li>
-        </ul>
+       <Link to="/cartView">
+          <CartWidget/>
+        </Link>
       </div>
     </div> 
 
-    </div>
+    
   );
 }
   
