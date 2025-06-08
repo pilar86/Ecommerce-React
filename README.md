@@ -31,7 +31,7 @@ Se trata de un ecommerce de productos de cosmética natural realizado con compon
 ### Herramientas :
 
 - HTML
-- CSS5
+- CSS
 - JAVASCRIPT
 - REACT 
 
