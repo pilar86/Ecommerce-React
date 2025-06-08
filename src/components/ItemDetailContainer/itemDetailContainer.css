@@ -8,5 +8,13 @@
 .selected-product{
     display: flex;            
     justify-content: center; 
-    padding: 25px 1px;       
+    padding-top: 290px;
+    padding-bottom: 90px; 
+
 }
+
+@media (max-width: 500px){
+    .selected-product{
+        padding-top: 200px;
+    }
+ }

@@ -3,14 +3,24 @@
     flex-wrap: wrap;
     justify-content: center;    
     margin: 0;
+    padding-top: 300px;
+    
+    
 }  
 .card{
-    background-color:  #f6f2ee;
+    background-color:  #f7f3f0;
     width: 280px;
     border-radius: 12px;
-    box-shadow: 0px 0px 30px rgba(134, 128, 123, 0.445); 
+    box-shadow: 0px 0px 30px rgba(163, 150, 140, 0.377); 
     overflow: hidden;
     transition:  all 0.3s ease-in;
     cursor: pointer;
     margin: 0px;
+    border: 2px solid #d8d3d3e1;
 }
+
+ @media (max-width: 500px){
+    .cards-container{
+        padding-top: 180px;
+    }
+ }

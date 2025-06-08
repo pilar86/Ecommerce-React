@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from "react-router-dom";
-import { getItems, getItemsByCategory } from "../../services/firestore"; // Asegúrate que esta ruta es correcta
-import ItemList from "../Productos/ItemList"; // ➡️ ¡LA RUTA A ItemList.js DEBE SER CORRECTA!
+import { getItems, getItemsByCategory } from "../../services/firestore"; 
+import ItemList from "../Productos/ItemList"; 
 import { DotPulse } from '@uiball/loaders';
 import "./itemListContainer.css";
 
@@ -55,33 +55,3 @@ function ItemListContainer() {
 }
 
 export default ItemListContainer;
-
-/*
-
-
-            if (category === undefined) {
-            getItems()
-            .then((respDatos)=> setData(respDatos))
-            .finally(() => setIsLoading(false));
-        } else{
-            getItemsByCategory(category)
-            .then((respDatosFiltredos) => setData(respDatosFiltredos))
-            .finally(()=> setIsLoading(false))
-        }
-        }, [category]);
-
-        return (
-            <div>
-                {isLoading && <DotPulse size={80} speed={1.5} color="green"/>}
-                <div className="main container">
-                    <ItemList data={data}/>  
-                </div>
-            </div>
-        );
-    }
-
-export default ItemListContainer;
-
-    */
-    
-    

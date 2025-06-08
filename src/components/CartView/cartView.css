@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10px;
+    padding-top: 30px;
     margin: 0;
 }
 
@@ -13,7 +13,7 @@
     align-items: center;
     gap: 12px;
     margin-bottom: 16px;
-    border: 1px solid #d4d4d4e1;
+    border: 2px solid #d4d4d4e0;
     border-radius: 8px;
     padding: 20px;
 }
@@ -35,7 +35,7 @@
     outline: none;
     cursor: pointer;
     font-size: 20px;
-    padding: 6px;
+    padding-right: 20px;
     margin-left: auto;
     display: flex;
     align-items: center;
@@ -44,7 +44,8 @@
 
 .mi-carrito h2{
     color:rgb(7, 33, 3);
-    padding:2rem;
+    padding-top:280px;
+    padding-left: 50px;
     font-size: 28px;
     letter-spacing: 4px;
 }
@@ -127,14 +128,15 @@
     .mi-carrito h2{
         margin: 0px;
         color:rgb(7, 33, 3);
-        padding:16px;
+        padding-top:180px;
         font-size: 20px;
         letter-spacing:1px;
     }
 
     .mi-carrito h4{
         font-size: 18px;
-        margin: 0;
+        margin: 4rem;
+        padding: auto;
     }
 
     h3{
@@ -144,6 +146,9 @@
         text-align: center;
     }
 
+    .cart-list {
+        padding-top: 40px;
+    }
     .cart-item h3{
         margin: 2px;
         padding: 4px;
@@ -172,6 +177,7 @@
 @media (min-width: 550px) and (max-width: 800px) {
 
     .cart-list {
+        padding-top: 30px;
         align-items: center;
         justify-content: center;
     }

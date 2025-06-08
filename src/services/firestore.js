@@ -8,11 +8,12 @@ import {
   getDoc, 
   query, 
   where,
+  orderBy,
   addDoc,
 } from "firebase/firestore";
 
 
-// Your web app's Firebase configuration
+
 const firebaseConfig = {
   apiKey: "AIzaSyCA4VRQCc7aASI8V8i4HSTw0SQiXMcyH8E",
   authDomain: "e-commerce-pilar.firebaseapp.com",
@@ -27,7 +28,8 @@ const firestore = getFirestore(app);
 
 export async function getItems() {
     const coleccion = collection(firestore, "cosmética natural");
-    let respuesta = await getDocs(coleccion);
+    const q = query(coleccion, orderBy("id", "asc"));
+    let respuesta = await getDocs(q);
     
     let dataDocs = respuesta.docs.map((documento) => {
        let docFormateado = { ...documento.data(), id: documento.id };
@@ -42,13 +44,15 @@ export async function getSingleItem(idParams) {
  const docSnapshot = await getDoc(docRef);
  return { ...docSnapshot.data(), id: docSnapshot.id };
   } catch (error) { 
-    
+    throw error;
   }
 }
 
 export async function getItemsByCategory(categoryParams) {
   const coleccion = collection(firestore, "cosmética natural");
-  const queryCategory = query(coleccion, where("category", "==", categoryParams));
+  const queryCategory = query(coleccion, 
+                                where("category", "==", categoryParams),
+                                orderBy("id", "asc"));
 
   const respuesta = await getDocs(queryCategory);
   let dataDocs = respuesta.docs.map((documento) => {
@@ -251,7 +255,7 @@ export async function dataToFirestore(){
     },
     {
         id: 21,
-        title:"aceite reparador",
+        title:"Aceite reparador",
         price: 1890,
         stock:12,
         category: "hair",
@@ -260,7 +264,7 @@ export async function dataToFirestore(){
     },
     {
         id: 22,
-        title:"Shampo",
+        title:"Shampoo",
         price: 1200,
         stock:9,
         category: "hair",
